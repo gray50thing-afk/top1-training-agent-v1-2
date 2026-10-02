@@ -1,0 +1,2 @@
+import { signIn } from '@/app/actions';
+export default async function Page({searchParams}:{searchParams:Promise<Record<string,string|undefined>>}){const sp=await searchParams;return <div className="card"><h1>로그인</h1>{sp.message&&<p className="muted">이메일 인증 후 로그인해 주세요.</p>}<form action={signIn}><label>이메일</label><input name="email" type="email" required/><label>비밀번호</label><input name="password" type="password" required/><button className="btn">로그인</button></form></div>}
